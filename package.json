@@ -1,0 +1,41 @@
+{
+  "name": "zendesk-search",
+  "version": "0.0.2",
+  "description": "Zendesk technical challenge",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src --out-dir dist ",
+    "test": "jest",
+    "format": "prettier --write 'src/**/*.js'",
+    "lint": "eslint src"
+  },
+  "author": "Attitude Lab",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "columnify": "^1.5.4",
+    "figlet": "^1.2.1",
+    "fuzzy": "^0.1.3",
+    "inquirer": "^6.3.1",
+    "inquirer-autocomplete-prompt": "^1.0.1",
+    "lodash": "^4.17.11",
+    "mongodb": "3.2.3",
+    "mongoose": "^5.5.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/node": "^7.2.2",
+    "@babel/plugin-transform-runtime": "^7.1.0",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/runtime": "^7.4.3",
+    "@types/jest": "^24.0.11",
+    "eslint": "^5.16.0",
+    "jest": "^24.7.1",
+    "prettier": "^1.17.0"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "useTabs": false
+  }
+}

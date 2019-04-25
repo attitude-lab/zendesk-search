@@ -1,0 +1,226 @@
+[
+  {
+    "database": "zendesk",
+    "collection": "organization",
+    "count": 50000,
+    "content": {
+      "_id": {
+        "type": "autoincrement",
+        "autoType": "int",
+        "startInt": 1
+      },
+      "url": {
+        "type": "faker",
+        "method": "URL"
+      },
+      "external_id": {
+        "type": "objectId"
+      },
+      "name": {
+        "type": "faker",
+        "method": "CompanyName"
+      },
+      "domain_names": {
+        "type": "array",
+        "nullPercentage": 10,
+        "size": 5,
+        "arrayContent": {
+          "type": "faker",
+          "method": "DomainName"
+        }
+      },
+      "created_at": {
+        "type": "date",
+        "startDate": "2010-01-10T00:00:00+00:00",
+        "endDate": "2017-01-01T22:00:00+00:00"
+      },
+      "details": {
+        "type": "fromArray",
+        "in": ["MegaCorp", "Non profit", "Artisan"]
+      },
+      "shared_tickets": {
+        "type": "boolean"
+      },
+      "tags": {
+        "type": "array",
+        "nullPercentage": 10,
+        "size": 5,
+        "arrayContent": {
+          "type": "faker",
+          "method": "FirstName"
+        }
+      }
+    }
+  },
+  {
+    "database": "zendesk",
+    "collection": "ticket",
+    "count": 1000000,
+    "content": {
+      "_id": {
+        "type": "objectId"
+      },
+      "url": {
+        "type": "faker",
+        "method": "URL"
+      },
+      "external_id": {
+        "type": "objectId"
+      },
+      "created_at": {
+        "type": "date",
+        "startDate": "2010-01-10T00:00:00+00:00",
+        "endDate": "2017-01-01T22:00:00+00:00"
+      },
+      "type": {
+        "type": "fromArray",
+        "in": ["question", "problem", "task", "incident"]
+      },
+      "subject": {
+        "type": "faker",
+        "method": "CompanyCatchPhrase"
+      },
+      "description": {
+        "type": "string",
+        "nullPercentage": 10,
+        "minLength": 5,
+        "maxLength": 256
+      },
+      "priority": {
+        "type": "fromArray",
+        "in": ["high", "normal", "low"]
+      },
+      "status": {
+        "type": "fromArray",
+        "in": ["open", "closed", "pending", "closed", "hold"]
+      },
+      "submitter_id": {
+        "type": "int",
+        "maxDistinctValue": 500000,
+        "minInt": 1,
+        "maxInt": 500000
+      },
+      "assignee_id": {
+        "type": "int",
+        "maxDistinctValue": 500000,
+        "minInt": 1,
+        "maxInt": 500000
+      },
+      "organization_id": {
+        "type": "int",
+        "maxDistinctValue": 50000,
+        "minInt": 1,
+        "maxInt": 50000
+      },
+      "tags": {
+        "type": "array",
+        "nullPercentage": 10,
+        "size": 5,
+        "arrayContent": {
+          "type": "faker",
+          "method": "FirstName"
+        }
+      },
+      "has_incidents": {
+        "type": "boolean"
+      },
+      "due_at": {
+        "type": "date",
+        "startDate": "2010-01-10T00:00:00+00:00",
+        "endDate": "2017-01-01T22:00:00+00:00"
+      },
+      "via": {
+        "type": "fromArray",
+        "in": ["web", "chat", "voice"]
+      }
+    }
+  },
+  {
+    "database": "zendesk",
+    "collection": "user",
+    "count": 250000,
+    "content": {
+      "_id": {
+        "type": "autoincrement",
+        "autoType": "int",
+        "startInt": 1
+      },
+      "url": {
+        "type": "faker",
+        "method": "URL"
+      },
+      "external_id": {
+        "type": "objectId"
+      },
+      "name": {
+        "type": "faker",
+        "method": "Name"
+      },
+      "alias": {
+        "type": "faker",
+        "method": "UserName"
+      },
+      "created_at": {
+        "type": "date",
+        "startDate": "2010-01-10T00:00:00+00:00",
+        "endDate": "2017-01-01T22:00:00+00:00"
+      },
+      "active": {
+        "type": "boolean"
+      },
+      "verified": {
+        "type": "boolean"
+      },
+      "shared": {
+        "type": "boolean"
+      },
+      "locale": {
+        "type": "fromArray",
+        "in": ["en-AU", "zh-CN", "de-CH"]
+      },
+      "timezone": {
+        "type": "faker",
+        "method": "Country"
+      },
+      "last_login_at": {
+        "type": "date",
+        "startDate": "2010-01-10T00:00:00+00:00",
+        "endDate": "2017-01-01T22:00:00+00:00"
+      },
+      "email": {
+        "type": "faker",
+        "method": "Email"
+      },
+      "phone": {
+        "type": "faker",
+        "method": "PhoneNumber"
+      },
+      "signature": {
+        "type": "constant",
+        "constVal": "Don't Worry Be Happy!"
+      },
+      "organization_id": {
+        "type": "int",
+        "maxDistinctValue": 50000,
+        "minInt": 1,
+        "maxInt": 50000
+      },
+      "tags": {
+        "type": "array",
+        "nullPercentage": 10,
+        "size": 5,
+        "arrayContent": {
+          "type": "faker",
+          "method": "City"
+        }
+      },
+      "suspended": {
+        "type": "boolean"
+      },
+      "role": {
+        "type": "fromArray",
+        "in": ["end-user", "admin", "agent"]
+      }
+    }
+  }
+]
