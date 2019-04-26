@@ -39,16 +39,6 @@ test('search int field and render to console', async () => {
   expect(renderToConsole).toHaveBeenCalledTimes(1);
 });
 
-test('search int field and render to console', async () => {
-  displayEnterValuePrompt.mockImplementationOnce(() =>
-    Promise.resolve({ value: 1 })
-  );
-  getUsers.mockImplementationOnce(() => Promise.resolve(''));
-  await searchHandler('id', 1, getUsers, ['name'], ['id', 'name']);
-
-  expect(renderToConsole).toHaveBeenCalledTimes(0);
-});
-
 test('allow entering search value after rendering results', async () => {
   displayEnterValuePrompt.mockImplementationOnce(() =>
     Promise.resolve({ value: 1 })

@@ -15,19 +15,19 @@ afterEach(() => {
   jest.resetAllMocks();
 });
 
-test('handle user selections', async () => {
+test('handle user selection', async () => {
   inquirer.prompt = jest.fn().mockResolvedValue({ field: '_id' });
   await handleMainPrompt({ main: 'Users' });
   expect(handleFieldsPrompt).toHaveBeenCalledTimes(1);
 });
 
-test('handle user selections', async () => {
+test('handle ticket selection', async () => {
   inquirer.prompt = jest.fn().mockResolvedValue({ field: '_id' });
   await handleMainPrompt({ main: 'Tickets' });
   expect(handleFieldsPrompt).toHaveBeenCalledTimes(1);
 });
 
-test('handle user selections', async () => {
+test('handle orgnization selection', async () => {
   inquirer.prompt = jest.fn().mockResolvedValue({ field: '_id' });
   await handleMainPrompt({ main: 'Organizations' });
   expect(handleFieldsPrompt).toHaveBeenCalledTimes(1);
