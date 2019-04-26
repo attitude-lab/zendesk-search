@@ -30,7 +30,7 @@ Make sure you can execute `node --version` and `yarn --version`
 
 `yarn && yarn build && node dist/program.js`
 
-## Seeding database with volume data
+## Populate database with fake data for perf testing
 
 Run `./data/generator/mgodatagen -f ./data/generator/config.json`
 
@@ -41,6 +41,19 @@ Run `./data/generator/mgodatagen -f ./data/generator/config.json`
 50,000 orgnizations
 
 https://github.com/feliixx/mgodatagen
+
+Indexes are defined for some of the search fields in `models`, to create indexes set `autoIndex: true` in `queryExecutor.js`
+
+https://mongoosejs.com/docs/guide.html#indexes
+
+With:
+1) one dockerized MongoDB instance, on a single machine
+2) and `ticket.status` indexed
+3) a ticket collection with 1 million records
+
+Performing a search for tickets that has `pending` status returned in 25 seconds.
+
+Sharding will have to be considered as an option to keep search time reasonable.
 
 ## Notes:
 
