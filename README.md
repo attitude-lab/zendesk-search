@@ -48,7 +48,7 @@ https://mongoosejs.com/docs/guide.html#indexes
 
 With:
 1) one dockerized MongoDB instance, on a single machine
-2) and `ticket.status` indexed
+2) and `ticket.status`, fields of joint collections indexed
 3) a ticket collection with 1 million records
 
 Performing a search for tickets that has `pending` status returned in 25 seconds.
