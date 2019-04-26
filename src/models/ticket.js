@@ -88,7 +88,7 @@ export const getTickets = query =>
   );
 
 export const ticketFields = Object.keys(path);
-export const ticketSearchableFields = Object.keys({
+export const ticketPartialSearchableFields = Object.keys({
   ...stringPath,
   ...stringArrayPath
 });

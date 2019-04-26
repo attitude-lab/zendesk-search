@@ -90,7 +90,7 @@ export const getUsers = query =>
       .catch(handleCastError)
   );
 export const userFields = Object.keys(path);
-export const userSearchableFields = Object.keys({
+export const userPartialSearchableFields = Object.keys({
   ...stringPath,
   ...stringArrayPath
 });

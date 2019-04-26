@@ -4,16 +4,20 @@ import { choices, displayFieldSelectionPrompt } from '../views/views';
 import { quit } from './quit';
 import { handleFieldsPrompt } from './searchField';
 
-import { getUsers, userFields, userSearchableFields } from '../models/user';
+import {
+  getUsers,
+  userFields,
+  userPartialSearchableFields
+} from '../models/user';
 import {
   getOrganizations,
   organizationFields,
-  organizationSearchableFields
+  organizationPartialSearchableFields
 } from '../models/organization';
 import {
   getTickets,
   ticketFields,
-  ticketSearchableFields
+  ticketPartialSearchableFields
 } from '../models/ticket';
 
 const appendNavigation = fields =>
@@ -26,7 +30,7 @@ export const handleMainPrompt = ({ main }) => {
       handleFieldsPrompt(
         answer,
         getUsers,
-        userSearchableFields,
+        userPartialSearchableFields,
         appendNavigation(userFields)
       )
     );
@@ -36,7 +40,7 @@ export const handleMainPrompt = ({ main }) => {
       handleFieldsPrompt(
         answer,
         getTickets,
-        ticketSearchableFields,
+        ticketPartialSearchableFields,
         appendNavigation(ticketFields)
       )
     );
@@ -47,7 +51,7 @@ export const handleMainPrompt = ({ main }) => {
         handleFieldsPrompt(
           answer,
           getOrganizations,
-          organizationSearchableFields,
+          organizationPartialSearchableFields,
           appendNavigation(organizationFields)
         )
     );

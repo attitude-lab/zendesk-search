@@ -6,13 +6,13 @@ const stringPath = {
   name: String,
   url: String,
   external_id: String,
-  details: String
+  details: String,
+  created_at: String
 };
 
 const stringArrayPath = {
   domain_names: [String],
-  tags: [String],
-  created_at: String
+  tags: [String]
 };
 
 const numberPath = {
@@ -73,7 +73,7 @@ export const getOrganizations = query =>
   );
 
 export const organizationFields = Object.keys(path);
-export const organizationSearchableFields = Object.keys({
+export const organizationPartialSearchableFields = Object.keys({
   ...stringPath,
   ...stringArrayPath
 });
